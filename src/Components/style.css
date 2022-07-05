@@ -1,0 +1,252 @@
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda&family=Poppins:wght@300&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+
+body {
+    background: #C9D6FF;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #E2E2E2, #C9D6FF);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E2E2E2, #C9D6FF);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+html {
+    font-size: 75.5%;
+}
+
+.header {
+    width: 100%;
+    height: 500px;
+
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(bg1.png);
+    clip-path: circle(65% at left 0px);
+    z-index: -1;
+}
+
+.row2 {
+    position: absolute;
+    top: 10px;
+    right: 150px;
+    text-align: center;
+}
+
+.row2 h2 {
+    font-size: 5rem;
+    margin-top: 10rem;
+    margin-bottom: 15px;
+
+}
+
+.row2 img {
+    margin-top: 30px;
+    width: 250px;
+}
+
+.row1 h1 {
+    font-size: 5rem;
+    text-align: center;
+    margin-left: 35px;
+    font-family: 'Bodoni Moda', serif;
+    color: white;
+}
+
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search input {
+    outline: none;
+    border: none;
+    width: 40rem;
+    height: 5rem;
+    padding: 0 1rem;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 0px 15px 0 15px;
+    position: relative;
+    font-size: large;
+}
+
+.search button {
+    outline: none;
+    border: none;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    border-radius: 0px 15px 0 15px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.search button:hover {
+    transition: all ease-in .1s;
+    background-color: #88c4e9;
+}
+
+.container {
+    width: 65%;
+    margin: 0 auto;
+    margin-top: 25px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 0.5fr));
+    grid-gap: 20px;
+    box-sizing: border-box;
+}
+.loading {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 18rem;
+    flex-direction: column;
+    
+}
+
+.card {
+    background-color: var(--secondary-color);
+    border-radius: 1rem;
+    padding: 0.5rem;
+    margin-bottom: 10px;
+    box-shadow: 0 5px 5px rgba(65, 65, 65, 0.5);
+    transition: .5s;
+    text-align: center;
+    position: relative;
+}
+
+.card:hover {
+    transform: scale(0.9);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    border-radius: 1rem 1rem 0 0;
+}
+
+.card .bottom {
+    display: flex;
+    flex-direction: column;
+}
+
+.card .bottom .title {
+    font-size: 14px;
+    margin: 1rem 0 2rem 0;
+
+}
+
+.card .bottom .categories {
+    text-align: start;
+    font-size: 13px;
+    
+}
+select {
+    outline: none;
+    border: none;
+    width: 10rem;
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 0px 15px 0 15px;
+    margin-top: 1rem;
+}
+label {
+    font-size: large;
+}
+
+.overlay {
+    min-height: 100vh;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-inner {
+    background: white;
+    width: 700px;
+    height: 550px;
+    padding: 1.5rem;
+    position: relative;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-size: 1.3rem;
+}
+
+.overlay-inner .close {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    background-color: transparent;
+}
+
+.overlay-inner .inner-box {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.overlay-inner .inner-box img {
+    margin-right: 20px;
+    width: 150px;
+    height: 200px;
+}
+
+.overlay-inner .inner-box h3 {
+    margin-top: 10px;
+    color: green;
+}
+
+.overlay-inner .inner-box h4 {
+    color: blue;
+}
+
+.overlay-inner .inner-box button {
+    outline: none;
+    border: none;
+    width: 100px;
+    border-radius: 5px;
+    background-color: #24a0ed;
+    color: white;
+    font-weight: bold;
+    padding: 0.3rem 0.5rem;
+}
+
+.overlay-inner .description {
+    margin-top: 2rem;
+    text-align: justify;
+    font-size: 13px;
+}
