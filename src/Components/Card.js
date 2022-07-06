@@ -1,35 +1,32 @@
 import React from "react";
 import { useState } from "react";
 import Modal from "./Modal";
-const Card = ({ book }) => {
 
+
+const Card = ({ books }) => {
     const [show,setShow] = useState(false);
     const [bookItem,setItem] = useState();
 
-    console.log(book)
+    // console.log(book)
     return (
         <>
             {
-                book.map((item, etag) => {
-                    let thumbnail=item.volumeInfo.imageLinks && item.volumeInfo.imageLinks.smallThumbnail;
-                    // let amount=item.saleInfo.listPrice && item.saleInfo.listPrice.amount;
-                    
-                    if(thumbnail != undefined  )
-                    {
+                books.map((book, i) => {
+
                         return (
-                            <div key={item.etag} >
-                            <div className="card" onClick={()=>{setShow(true);setItem(item)}}>
-                                <img src={thumbnail} alt="" />
+                            <div key={i} >
+                            <div className="card" onClick={()=>{setShow(true);setItem(book)}}>
+                                <img src={ book.volumeInfo.imageLinks.thumbnail} alt="" />
                                 <div className="bottom">
-                                    <p className="categories">{item.volumeInfo.categories}</p>
-                                    <h3 className="title">{item.volumeInfo.title}</h3>
-                                    <p>Published: {item.volumeInfo.publishedDate}</p>
+                                    <p className="categories">{book.volumeInfo.categories}</p>
+                                    <h3 className="title">{book.volumeInfo.title}</h3>
+                                    <p>Published: {book.volumeInfo.publishedDate}</p>
                                 </div>
                             </div>
                               <Modal show={show} item={bookItem} onClose={()=>setShow(false)}/>
                             </div>
                         )
-                    }
+                
                     
                 })
             }
